@@ -1,8 +1,8 @@
 # 5G-Network-Implementation
-Program Studi: Sarjana Ilmu Komputer
-Topik: Implementasi dan Testing 5G Core Network
-Tahun Akademik: 2025
-Repository: https://github.com/rayhanegar/Open5GS-Testbed dan https://hackmd.io/@bNHBr_ClRs-kkD7KxWjBLQ/SywnPkJxWx#tugas-1-konektivitas-dasar
+- Program Studi: Sarjana Ilmu Komputer
+- Topik: Implementasi dan Testing 5G Core Network
+- Tahun Akademik: 2025
+- Repository: https://github.com/rayhanegar/Open5GS-Testbed dan https://hackmd.io/@bNHBr_ClRs-kkD7KxWjBLQ/SywnPkJxWx#tugas-1-konektivitas-dasar
 
 ## Tugas 1: Konektivitas Dasar
 
