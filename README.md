@@ -7,7 +7,7 @@ Repository: https://github.com/rayhanegar/Open5GS-Testbed dan https://hackmd.io/
 ## Tugas 1: Konektivitas Dasar
 
 **Tanggal**: [13 NOVEMBER 2025]
-**Nama**: [WAHYU DWI LAKSANA PUTRI]
+**Nama**: [WAHYU DWI LAKSANA PUTRI, SYAFA SYAKIRA SHALSABILA, ZAQIA MAHADEWI]
 **Status K3s**: [WORKING]
 
 ### gNB Registration
