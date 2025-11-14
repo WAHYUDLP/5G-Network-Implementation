@@ -8,7 +8,7 @@ Repository: https://github.com/rayhanegar/Open5GS-Testbed dan https://hackmd.io/
 
 **Tanggal**: [13 NOVEMBER 2025]
 
-**Nama**: [WAHYU DWI LAKSANA PUTRI, SYAFA SYAKIRA SHALSABILA, ZAQIA MAHADEWI]
+**Nama**: [WAHYU DWI LAKSANA PUTRI, SYAFA SYAKIRA SHALSABILLA, ZAQIA MAHADEWI]
 
 **Status K3s**: [WORKING]
 
