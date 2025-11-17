@@ -184,15 +184,15 @@ kubectl get nodes
 
 *_Screenshot Step 2_*
 
-1.  <img width="2411" height="1209" alt="image" src="https://github.com/user-attachments/assets/fdac9637-0564-4dd6-86ae-855e10a0146e" />
+1.  <img width="500" alt="image" src="https://github.com/user-attachments/assets/fdac9637-0564-4dd6-86ae-855e10a0146e" />
 
-2. <img width="2675" height="193" alt="image" src="https://github.com/user-attachments/assets/06bbd368-edf8-40eb-a2be-e625ca4954d4" />
+2. <img width="500" alt="image" src="https://github.com/user-attachments/assets/06bbd368-edf8-40eb-a2be-e625ca4954d4" />
 
-3. <img width="1715" height="269" alt="image" src="https://github.com/user-attachments/assets/cbf1f1d3-1b5a-41f2-b740-2451188a42cb" />
+3. <img width="500" alt="image" src="https://github.com/user-attachments/assets/cbf1f1d3-1b5a-41f2-b740-2451188a42cb" />
 
-4. <img width="2400" height="1381" alt="image" src="https://github.com/user-attachments/assets/3886e47f-e61b-4caa-b78c-dc3f4f68ee9b" />
+4. <img width="500" alt="image" alt="image" src="https://github.com/user-attachments/assets/3886e47f-e61b-4caa-b78c-dc3f4f68ee9b" />
 
-5. <img width="1805" height="1429" alt="image" src="https://github.com/user-attachments/assets/5c4d93a4-45ec-470e-b059-e353b30fa84e" />
+5. <img width="500" alt="image" src="https://github.com/user-attachments/assets/5c4d93a4-45ec-470e-b059-e353b30fa84e" />
 
 
 Penjelasan: 
@@ -214,8 +214,8 @@ sudo k3s crictl images
 
 *_Screenshot Step 3_*
 
-1. <img width="1791" height="696" alt="image" src="https://github.com/user-attachments/assets/78256bb2-e7c7-48b5-9e5b-10ad7c37a95b" />
-2. <img width="2162" height="1157" alt="image" src="https://github.com/user-attachments/assets/5a1006df-2a5b-45a0-885f-f366b25fa140" />
+1. <img width="500" alt="image" src="https://github.com/user-attachments/assets/78256bb2-e7c7-48b5-9e5b-10ad7c37a95b" />
+2. <img width="500" alt="image" src="https://github.com/user-attachments/assets/5a1006df-2a5b-45a0-885f-f366b25fa140" />
 
 
 
@@ -267,7 +267,7 @@ kubectl get pods -n open5gs
 
 *_Screenshot Step 4_*
 
-<img width="2133" height="1265" alt="1 tiga command cek nodes dan pods" src="https://github.com/user-attachments/assets/6f7b1999-00b8-4905-81db-d1ecafd4e3a8" />
+<img width="500" alt="image" alt="1 tiga command cek nodes dan pods" src="https://github.com/user-attachments/assets/6f7b1999-00b8-4905-81db-d1ecafd4e3a8" />
 
 Penjelasan: 
 ```text
@@ -289,7 +289,7 @@ kubectl logs -n open5gs upf-0
 
 *_Screenshot Verifikasi Deployment 1_*
 
-<img width="2432" height="584" alt="image" src="https://github.com/user-attachments/assets/a086ca01-50cf-47c2-8fd3-d722afdf576d" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a086ca01-50cf-47c2-8fd3-d722afdf576d" />
 
 
 Penjelasan: 
@@ -314,8 +314,8 @@ sudo ./verify-static-ips.sh
 ```
 *_Screenshot Verifikasi Deployment 2_*
 
-<img width="1516" height="1266" alt="image" src="https://github.com/user-attachments/assets/ed45577a-04a1-4020-a5c2-0002c405aa00" />
-<img width="1521" height="1261" alt="image" src="https://github.com/user-attachments/assets/62af6424-ee5e-4766-bb8d-158784fd8aa1" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ed45577a-04a1-4020-a5c2-0002c405aa00" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/62af6424-ee5e-4766-bb8d-158784fd8aa1" />
 
 
 Penjelasan: 
@@ -337,8 +337,8 @@ sudo ./verify-mongodb.sh
 ```
 *_Screenshot Verifikasi Deployment 3_*
 
-1. <img width="1517" height="1233" alt="image" src="https://github.com/user-attachments/assets/8be2926f-0e79-405e-8e11-29ccf8473e9d" />
-2. <img width="1442" height="1348" alt="Cuplikan layar 2025-11-13 232818" src="https://github.com/user-attachments/assets/5a4b61e4-9fe6-46d8-aefa-5ffe3c8520f7" />
+1. <img width="500" alt="image" src="https://github.com/user-attachments/assets/8be2926f-0e79-405e-8e11-29ccf8473e9d" />
+2. <img width="500" alt="image" src="https://github.com/user-attachments/assets/5a4b61e4-9fe6-46d8-aefa-5ffe3c8520f7" />
 
 
 Penjelasan: 
@@ -361,7 +361,7 @@ $ curl -s http://nrf-0.nrf.open5gs.svc.cluster.local:7777/nnrf-nfm/v1/nf-instanc
 
 *_Screenshot Verifikasi Deployment 4_*
 
-<img width="1502" height="298" alt="image" src="https://github.com/user-attachments/assets/3ed8e57d-4535-4ec7-a45e-3563beead551" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/3ed8e57d-4535-4ec7-a45e-3563beead551" />
 
 Penjelasan: 
 ```text
@@ -397,8 +397,8 @@ cd ~/Open5GS-Testbed/ueransim
 ```
 *_Screenshot Langkah-Langkah 1.1_*
 
-1. <img width="1523" height="399" alt="image" src="https://github.com/user-attachments/assets/3dfc4993-0cce-4ec6-8ce9-59a616959be5" />
-2. <img width="1499" height="1392" alt="image" src="https://github.com/user-attachments/assets/1ab39050-8eba-44c4-b4c3-2aa2f14aa0c3" />
+1. <img width="500" alt="image" src="https://github.com/user-attachments/assets/3dfc4993-0cce-4ec6-8ce9-59a616959be5" />
+2. <img width="500" alt="image" src="https://github.com/user-attachments/assets/1ab39050-8eba-44c4-b4c3-2aa2f14aa0c3" />
 
 Penjelasan: 
 ```text
@@ -419,7 +419,7 @@ cd ~/Open5GS-Testbed/ueransim
 ```
 *_Screenshot Langkah-Langkah 1.2_*
 
-<img width="1610" height="1498" alt="2 1 Logs gNB" src="https://github.com/user-attachments/assets/4c8e0928-7677-4487-b154-e4eb1813250f" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/4c8e0928-7677-4487-b154-e4eb1813250f" />
 
 
 Penjelasan: 
@@ -441,9 +441,9 @@ sudo ./build/nr-ue -c configs/open5gs-ue-embb.yaml
 ```
 *_Screenshot Langkah-Langkah 1.3_*
 
-<img width="1606" height="1497" alt="2 2 Logs UE bagian 1" src="https://github.com/user-attachments/assets/73bd96c4-a16b-4a6f-a3fd-c32aae39277e" />
+<img width="500" alt="2 2 Logs UE bagian 1" src="https://github.com/user-attachments/assets/73bd96c4-a16b-4a6f-a3fd-c32aae39277e" />
 
-<img width="1692" height="1409" alt="2 3 Logs UE bagian 2" src="https://github.com/user-attachments/assets/06368137-258d-400b-a8ca-5eb12c848755" />
+<img width="500" alt="2 3 Logs UE bagian 2" src="https://github.com/user-attachments/assets/06368137-258d-400b-a8ca-5eb12c848755" />
 
 Penjelasan: 
 ```text
@@ -473,14 +473,14 @@ curl --interface uesimtun0 -I https://www.google.com
 *_Screenshot Langkah-Langkah 1.4_*
 
 Test UE TUN interface dan Test gateway connectivity (UE -> UPF)
-<img width="1530" height="973" alt="image" src="https://github.com/user-attachments/assets/473022f4-9820-41d6-86c4-651226b67cab" />
+<img width="500"  alt="1. Test UI TUN dan gateway connectivity" src="https://github.com/user-attachments/assets/473022f4-9820-41d6-86c4-651226b67cab" />
 
 
  Test internet connectivity dan Test DNS resolution
- <img width="1599" height="1135" alt="3 2 Test ping dan DNS resolution" src="https://github.com/user-attachments/assets/34428863-fd51-4b7f-9762-9dc2c2845509" />
+<img width="500" alt="3 2 Test ping dan DNS resolution" src="https://github.com/user-attachments/assets/34428863-fd51-4b7f-9762-9dc2c2845509" />
 
  Test HTTP/HTTPS
-<img width="1615" height="1179" alt="3 3 Test HTTP-HTTPS" src="https://github.com/user-attachments/assets/0061b3ea-c361-4776-95d0-f3cca67caed0" />
+<img width="500"  alt="3 3 Test HTTP-HTTPS" src="https://github.com/user-attachments/assets/0061b3ea-c361-4776-95d0-f3cca67caed0" />
 
  
 Penjelasan: 
