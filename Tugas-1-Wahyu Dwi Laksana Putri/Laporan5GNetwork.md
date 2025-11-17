@@ -474,7 +474,7 @@ curl --interface uesimtun0 -I https://www.google.com
 *_Screenshot Langkah-Langkah 1.4_*
 
 Test UE TUN interface dan Test gateway connectivity (UE -> UPF)
-<img width="1619" height="1010" alt="3 1 Test UE TUN interface  dan gateway connectivity" src="https://github.com/user-attachments/assets/e8d52766-aa30-46a3-87d1-7dafa783a870" />
+<img width="1530" height="973" alt="image" src="https://github.com/user-attachments/assets/473022f4-9820-41d6-86c4-651226b67cab" />
 
 
  Test internet connectivity dan Test DNS resolution
