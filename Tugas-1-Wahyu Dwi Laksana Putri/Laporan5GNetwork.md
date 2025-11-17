@@ -289,7 +289,9 @@ kubectl logs -n open5gs upf-0
 ```
 
 *_Screenshot Verifikasi Deployment 1_*
- ini buat paste ss an nunjukkin berhasil
+
+<img width="2432" height="584" alt="image" src="https://github.com/user-attachments/assets/a086ca01-50cf-47c2-8fd3-d722afdf576d" />
+
 
 Penjelasan: 
 ```text
@@ -312,7 +314,10 @@ sudo ./verify-static-ips.sh
 
 ```
 *_Screenshot Verifikasi Deployment 2_*
- ini buat paste ss an nunjukkin berhasil
+
+<img width="1516" height="1266" alt="image" src="https://github.com/user-attachments/assets/ed45577a-04a1-4020-a5c2-0002c405aa00" />
+<img width="1521" height="1261" alt="image" src="https://github.com/user-attachments/assets/62af6424-ee5e-4766-bb8d-158784fd8aa1" />
+
 
 Penjelasan: 
 ```text
@@ -357,7 +362,7 @@ $ curl -s http://nrf-0.nrf.open5gs.svc.cluster.local:7777/nnrf-nfm/v1/nf-instanc
 
 *_Screenshot Verifikasi Deployment 4_*
 
- ini buat paste ss an nunjukkin berhasil
+<img width="1502" height="298" alt="image" src="https://github.com/user-attachments/assets/3ed8e57d-4535-4ec7-a45e-3563beead551" />
 
 Penjelasan: 
 ```text
@@ -393,7 +398,8 @@ cd ~/Open5GS-Testbed/ueransim
 ```
 *_Screenshot Langkah-Langkah 1.1_*
 
- ini buat paste ss an nunjukkin berhasil
+1. <img width="1523" height="399" alt="image" src="https://github.com/user-attachments/assets/3dfc4993-0cce-4ec6-8ce9-59a616959be5" />
+2. <img width="1499" height="1392" alt="image" src="https://github.com/user-attachments/assets/1ab39050-8eba-44c4-b4c3-2aa2f14aa0c3" />
 
 Penjelasan: 
 ```text
