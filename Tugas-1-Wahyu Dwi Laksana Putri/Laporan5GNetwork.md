@@ -344,9 +344,117 @@ Penjelasan:
 ini penjelasan ges
 ```
 
+# Tugas 1: Konektivitas Dasar
+
+## Objective
+
+Verify bahwa Open5GS deployment berfungsi dengan benar dan dapat connect dengan 
+UERANSIM.
+
+## Prerequisites
+- K3s deployment selesai
+- Semua pods running
+- UERANSIM binary tersedia
+
+## Langkah-Langkah
+### 1.1 Persiapkan UERANSIM pada host eksternal
+```bash
+
+# Di mesin yang berbeda dari K3s (atau terminal baru dengan user biasa):
+cd ~/Open5GS-Testbed/ueransim
+
+# Modifikasi gNB config untuk connect ke K3s AMF
+# Ubah AMF address di open5gs-gnb-k3s.yaml:
+#
+# amfConfigs:
+#   - address: <K3s_HOST_IP>  # IP address dari K3s cluster
+#     port: 38412
+
+```
+*_Screenshot Langkah-Langkah 1.1_*
+
+ ini buat paste ss an nunjukkin berhasil
+
+Penjelasan: 
+```text
+ini penjelasan ges
+```
+
+## 1.2 Start gNB Simulator
+```bash
+# Terminal 1 - gNB
+cd ~/Open5GS-Testbed/ueransim
+./build/nr-gnb -c configs/open5gs-gnb-k3s.yaml
+
+# Expected output:
+# [sctp] [info] Trying to establish SCTP connection... (10.X.X.X:38412)
+# [sctp] [info] SCTP connection established
+# [ngap] [info] NG Setup procedure is successful
+
+```
+*_Screenshot Langkah-Langkah 1.2_*
+
+ ini buat paste ss an nunjukkin berhasil
+
+Penjelasan: 
+```text
+ini penjelasan ges
+```
+
+## 1.3 Start UE Simulator
+```bash
+
+# Terminal 2 - UE
+cd ~/Open5GS-Testbed/ueransim
+sudo ./build/nr-ue -c configs/open5gs-ue-embb.yaml
+
+# Expected output:
+# [nas] [info] UE switches to state [MM-REGISTERED/NORMAL-SERVICE]
+# [nas] [info] PDU Session establishment is successful PSI[1]
+# [app] [info] Connection setup for PDU session[1] is successful, TUN interface[uesimtun0, 10.45.0.X] is up.
+```
+*_Screenshot Langkah-Langkah 1.3_*
+
+ ini buat paste ss an nunjukkin berhasil
+
+Penjelasan: 
+```text
+ini penjelasan ges
+```
+
+## 1.4 Test Basic Connectivity
+```bash
+
+#Terminal 3 - Testing
+# Test UE TUN interface
+ip addr show uesimtun0
+
+# Test gateway connectivity (UE -> UPF)
+ping -I uesimtun0 -c 4 10.45.0.1
+
+# Test internet connectivity
+ping -I uesimtun0 -c 4 8.8.8.8
+
+# Test DNS resolution
+nslookup google.com 8.8.8.8
+
+# Test HTTP/HTTPS
+curl --interface uesimtun0 -I https://www.google.com
+
+```
+*_Screenshot Langkah-Langkah 1.4_*
+
+ ini buat paste ss an nunjukkin berhasil
+
+Penjelasan: 
+```text
+ini penjelasan ges
+```
+
+
 ============================================================================================
 
-## Tugas 1: Konektivitas Dasar
+# Dokumentasi Tugas 1: Konektivitas Dasar
 
 **Tanggal**: [13 NOVEMBER 2025]
 
