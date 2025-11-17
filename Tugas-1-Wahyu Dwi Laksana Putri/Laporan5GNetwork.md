@@ -138,7 +138,9 @@ sudo chmod 777 /mnt/data/open5gs-logs
 ```
 
 *_Screenshot Step 1_*
- ini buat paste ss an nunjukkin berhasil
+
+<img width="1470" height="266" alt="image" src="https://github.com/user-attachments/assets/de602306-4d75-45c3-8be1-47b6e114e1f7" />
+
 
 Penjelasan: 
 ```text
@@ -148,7 +150,7 @@ ini penjelasan ges
 ## Step 2: Setup K3s Environment dengan Calico
 
 Navigate ke direktori K3s dan jalankan setup script:
-![Uploading image.png…]()
+
 
 ```bash
 cd ~/Open5GS-Testbed/open5gs/open5gs-k3s-calico
@@ -182,7 +184,17 @@ kubectl get nodes
 ```
 
 *_Screenshot Step 2_*
- ini buat paste ss an nunjukkin berhasil
+
+1.  <img width="2411" height="1209" alt="image" src="https://github.com/user-attachments/assets/fdac9637-0564-4dd6-86ae-855e10a0146e" />
+
+2. <img width="2675" height="193" alt="image" src="https://github.com/user-attachments/assets/06bbd368-edf8-40eb-a2be-e625ca4954d4" />
+
+3. <img width="1715" height="269" alt="image" src="https://github.com/user-attachments/assets/cbf1f1d3-1b5a-41f2-b740-2451188a42cb" />
+
+4. <img width="2400" height="1381" alt="image" src="https://github.com/user-attachments/assets/3886e47f-e61b-4caa-b78c-dc3f4f68ee9b" />
+
+5. <img width="1805" height="1429" alt="image" src="https://github.com/user-attachments/assets/5c4d93a4-45ec-470e-b059-e353b30fa84e" />
+
 
 Penjelasan: 
 ```text
@@ -202,7 +214,11 @@ sudo k3s crictl images
 ```
 
 *_Screenshot Step 3_*
- ini buat paste ss an nunjukkin berhasil
+
+1. <img width="1791" height="696" alt="image" src="https://github.com/user-attachments/assets/78256bb2-e7c7-48b5-9e5b-10ad7c37a95b" />
+2. <img width="2162" height="1157" alt="image" src="https://github.com/user-attachments/assets/5a1006df-2a5b-45a0-885f-f366b25fa140" />
+
+
 
 Penjelasan: 
 ```text
@@ -394,7 +410,8 @@ cd ~/Open5GS-Testbed/ueransim
 ```
 *_Screenshot Langkah-Langkah 1.2_*
 
- ini buat paste ss an nunjukkin berhasil
+<img width="1610" height="1498" alt="2 1 Logs gNB" src="https://github.com/user-attachments/assets/4c8e0928-7677-4487-b154-e4eb1813250f" />
+
 
 Penjelasan: 
 ```text
@@ -415,7 +432,9 @@ sudo ./build/nr-ue -c configs/open5gs-ue-embb.yaml
 ```
 *_Screenshot Langkah-Langkah 1.3_*
 
- ini buat paste ss an nunjukkin berhasil
+<img width="1606" height="1497" alt="2 2 Logs UE bagian 1" src="https://github.com/user-attachments/assets/73bd96c4-a16b-4a6f-a3fd-c32aae39277e" />
+
+<img width="1692" height="1409" alt="2 3 Logs UE bagian 2" src="https://github.com/user-attachments/assets/06368137-258d-400b-a8ca-5eb12c848755" />
 
 Penjelasan: 
 ```text
@@ -444,8 +463,17 @@ curl --interface uesimtun0 -I https://www.google.com
 ```
 *_Screenshot Langkah-Langkah 1.4_*
 
- ini buat paste ss an nunjukkin berhasil
+Test UE TUN interface dan Test gateway connectivity (UE -> UPF)
+<img width="1619" height="1010" alt="3 1 Test UE TUN interface  dan gateway connectivity" src="https://github.com/user-attachments/assets/e8d52766-aa30-46a3-87d1-7dafa783a870" />
 
+
+ Test internet connectivity dan Test DNS resolution
+ <img width="1599" height="1135" alt="3 2 Test ping dan DNS resolution" src="https://github.com/user-attachments/assets/34428863-fd51-4b7f-9762-9dc2c2845509" />
+
+ Test HTTP/HTTPS
+<img width="1615" height="1179" alt="3 3 Test HTTP-HTTPS" src="https://github.com/user-attachments/assets/0061b3ea-c361-4776-95d0-f3cca67caed0" />
+
+ 
 Penjelasan: 
 ```text
 ini penjelasan ges
