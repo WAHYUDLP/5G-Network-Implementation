@@ -139,8 +139,7 @@ sudo chmod 777 /mnt/data/open5gs-logs
 
 *_Screenshot Step 1_*
 
-<img width="1470" height="266" alt="image" src="https://github.com/user-attachments/assets/de602306-4d75-45c3-8be1-47b6e114e1f7" />
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/de602306-4d75-45c3-8be1-47b6e114e1f7" />
 
 Penjelasan: 
 ```text
