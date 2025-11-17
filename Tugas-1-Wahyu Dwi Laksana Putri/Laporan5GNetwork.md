@@ -267,7 +267,8 @@ kubectl get pods -n open5gs
 ```
 
 *_Screenshot Step 4_*
- ini buat paste ss an nunjukkin berhasil
+
+<img width="2133" height="1265" alt="1 tiga command cek nodes dan pods" src="https://github.com/user-attachments/assets/6f7b1999-00b8-4905-81db-d1ecafd4e3a8" />
 
 Penjelasan: 
 ```text
@@ -331,7 +332,10 @@ sudo ./verify-mongodb.sh
 
 ```
 *_Screenshot Verifikasi Deployment 3_*
- ini buat paste ss an nunjukkin berhasil
+
+1.
+2. <img width="1442" height="1348" alt="Cuplikan layar 2025-11-13 232818" src="https://github.com/user-attachments/assets/5a4b61e4-9fe6-46d8-aefa-5ffe3c8520f7" />
+
 
 Penjelasan: 
 ```text
