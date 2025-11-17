@@ -333,7 +333,7 @@ sudo ./verify-mongodb.sh
 ```
 *_Screenshot Verifikasi Deployment 3_*
 
-1.
+1. <img width="1517" height="1233" alt="image" src="https://github.com/user-attachments/assets/8be2926f-0e79-405e-8e11-29ccf8473e9d" />
 2. <img width="1442" height="1348" alt="Cuplikan layar 2025-11-13 232818" src="https://github.com/user-attachments/assets/5a4b61e4-9fe6-46d8-aefa-5ffe3c8520f7" />
 
 
