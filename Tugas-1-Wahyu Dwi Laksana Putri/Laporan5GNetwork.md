@@ -447,7 +447,16 @@ sudo ./build/nr-ue -c configs/open5gs-ue-embb.yaml
 
 Penjelasan: 
 ```text
-Pada tahap 1.3 Start UE Simulator, proses inisialisasi perangkat pengguna (User Equipment/UE) dilakukan menggunakan UERANSIM untuk menguji konektivitas terhadap core network Open5GS. Eksekusi perintah nr-ue dengan menggunakan konfigurasi open5gs-ue-embb.yaml memulai simulasi UE dan memicu rangkaian prosedur attach serta registrasi ke jaringan 5G. Berdasarkan output terminal, UE melalui tahapan PLMN search, RRC connection setup, autentikasi, security mode command, hingga initial registration, yang seluruhnya diterima dan disetujui oleh jaringan hingga status berubah menjadi MM-REGISTERED/NORMAL-SERVICE. Screenshot pertama menunjukkan fase awal ketika UE mendeteksi sel, melakukan koneksi RRC, serta memasuki mode layanan normal, sedangkan screenshot kedua menampilkan kelanjutan proses yang mengonfirmasi bahwa Registration Accept telah diterima, PDU Session Establishment berhasil (PSI[1]), dan antarmuka jaringan virtual uesimtun0 telah aktif dengan alamat IP (misalnya 10.45.0.2). Dengan begitu, simulator UE telah resmi terhubung ke jaringan inti 5G dan siap digunakan untuk mengirim maupun menerima trafik data dalam lingkungan testbed yang telah dikonfigurasi.
+Pada tahap 1.3 Start UE Simulator, proses inisialisasi perangkat pengguna (User Equipment/UE) dilakukan menggunakan UERANSIM
+untuk menguji konektivitas terhadap core network Open5GS. Eksekusi perintah nr-ue dengan menggunakan konfigurasi
+open5gs-ue-embb.yaml memulai simulasi UE dan memicu rangkaian prosedur attach serta registrasi ke jaringan 5G. Berdasarkan
+output terminal, UE melalui tahapan PLMN search, RRC connection setup, autentikasi, security mode command, hingga initial
+registration, yang seluruhnya diterima dan disetujui oleh jaringan hingga status berubah menjadi MM-REGISTERED/NORMAL-SERVICE.
+Screenshot pertama menunjukkan fase awal ketika UE mendeteksi sel, melakukan koneksi RRC, serta memasuki mode layanan normal,
+sedangkan screenshot kedua menampilkan kelanjutan proses yang mengonfirmasi bahwa Registration Accept telah diterima,
+PDU Session Establishment berhasil (PSI[1]), dan antarmuka jaringan virtual uesimtun0 telah aktif dengan alamat IP
+(misalnya 10.45.0.2). Dengan begitu, simulator UE telah resmi terhubung ke jaringan inti 5G dan siap digunakan untuk mengirim
+maupun menerima trafik data dalam lingkungan testbed yang telah dikonfigurasi.
 ```
 
 ## 1.4 Test Basic Connectivity
@@ -485,7 +494,21 @@ Test UE TUN interface dan Test gateway connectivity (UE -> UPF)
  
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 1.4 Test Basic Connectivity, dilakukan pengujian untuk memastikan bahwa User Equipment (UE) yang dijalankan
+melalui UERANSIM tidak hanya berhasil ter-registrasi ke jaringan inti 5G, tetapi juga dapat mengirim dan menerima trafik
+data melalui UPF hingga mencapai jaringan internet. Pengujian dimulai dengan memverifikasi antarmuka TUN (uesimtun0)
+menggunakan perintah ip addr show, yang menunjukkan bahwa interface tersebut aktif dan telah memperoleh alamat IP (10.45.0.2),
+menandakan keberhasilan pembentukan sesi PDU. Selanjutnya, konektivitas internal UE–UPF diuji menggunakan ping -I uesimtun0
+10.45.0.1, yang memberikan respon ICMP tanpa packet loss, sehingga memastikan jalur komunikasi menuju gateway jaringan berfungsi
+normal. Pengujian juga dilakukan ke konektivitas eksternal melalui ping -I uesimtun0 8.8.8.8, yang menunjukkan bahwa trafik dari
+UE dapat mencapai internet publik melalui UPF. Layanan DNS divalidasi menggunakan nslookup google.com 8.8.8.8, yang berhasil
+menerjemahkan nama domain ke alamat IP, menegaskan bahwa resolusi DNS berjalan dengan baik. Verifikasi pada lapisan aplikasi
+dilakukan menggunakan curl --interface uesimtun0 https://www.google.com, yang menghasilkan respons HTTP/2 200 dari server Google,
+ menandakan bahwa UE dapat mengakses layanan web secara penuh. Screenshot pertama memperlihatkan keberhasilan pengecekan interface
+TUN dan konektivitas ke UPF, screenshot kedua menunjukkan bahwa UE dapat melakukan ping ke internet dan melakukan resolusi DNS,
+sementara screenshot ketiga menampilkan respons HTTP/HTTPS yang menegaskan akses web berhasil dilakukan. Seluruh pengujian ini
+mengonfirmasi bahwa konektivitas data UE berfungsi sepenuhnya, mulai dari komunikasi internal dalam jaringan 5G hingga akses ke
+layanan internet dan aplikasi dalam lingkungan testbed yang dikonfigurasi. 
 ```
 
 
