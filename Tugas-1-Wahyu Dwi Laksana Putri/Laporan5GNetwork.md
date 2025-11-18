@@ -379,7 +379,18 @@ $ curl -s http://nrf-0.nrf.open5gs.svc.cluster.local:7777/nnrf-nfm/v1/nf-instanc
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 4 Cek Service Connectivity, dilakukan proses verifikasi konektivitas antar Network Function (NF) di dalam cluster K3s
+untuk memastikan bahwa komponen-komponen inti Open5GS dapat saling berkomunikasi melalui service internal Kubernetes. Proses
+dimulai dengan mengeksekusi perintah kubectl exec untuk masuk ke dalam pod AMF menggunakan shell /bin/bash, sebagaimana terlihat
+pada screenshot, dengan tujuan melakukan pengujian jaringan langsung dari dalam pod. Setelah berhasil masuk, dilakukan permintaan
+HTTP menggunakan curl menuju endpoint NRF pada alamat http://nrf-0.nrf.open5gs.svc.cluster.local:7777/nnrf-nfm/v1/nf-instances.
+Endpoint ini merupakan jalur standar yang digunakan untuk mendapatkan daftar NF yang terdaftar pada NRF melalui interface Nnrf_NFManagement.
+Screenshot yang ditampilkan menunjukkan bahwa perintah curl dapat dijalankan tanpa error, menandakan bahwa AMF mampu melakukan
+resolusi DNS internal cluster, menjangkau service NRF, dan menerima respons dari layanan tersebut. Keberhasilan ini memastikan bahwa
+komunikasi antar-NF pada arsitektur Kubernetes telah berjalan sesuai mekanisme standar, di mana setiap layanan dapat diakses melalui
+DNS internal dengan pola <pod>.<service>.<namespace>.svc.cluster.local. Dengan begitua AMF berhasil melakukan konektivitas ke NRF,
+sehingga proses NF discovery dan registration dalam sistem Open5GS dapat berlangsung dengan normal dan mendukung operasional jaringan
+5G pada testbed yang dikonfigurasi.
 ```
 
 # Tugas 1: Konektivitas Dasar
