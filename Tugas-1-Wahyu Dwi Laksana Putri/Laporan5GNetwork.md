@@ -650,4 +650,4 @@ layanan internet dan aplikasi dalam lingkungan testbed yang dikonfigurasi.
 
 
 ## Kesimpulan
-
+Implementasi Tugas 1 mengenai konektivitas dasar 5G pada lingkungan K3s telah berhasil diselesaikan dengan status working, di mana registrasi gNB ke AMF dan UE (IMSI 999700000000001) ke jaringan inti berjalan sukses yang ditandai dengan terbentuknya PDU session pada interface uesimtun0. Seluruh pengujian konektivitas, mulai dari ping ke gateway UPF hingga akses internet (8.8.8.8) dan resolusi DNS, dinyatakan lulus (PASS) dengan latensi internet rata-rata 111.84 ms. Kendala teknis awal terkait konfigurasi IP dan kegagalan binding SCTP berhasil diatasi sepenuhnya melalui penyesuaian konfigurasi ke IP Host (10.0.2.15) serta patching layanan AMF menjadi NodePort, sehingga sistem kini beroperasi stabil dan terhubung ke jaringan eksternal.
