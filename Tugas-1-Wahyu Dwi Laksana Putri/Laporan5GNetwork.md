@@ -343,7 +343,21 @@ sudo ./verify-mongodb.sh
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 3. Verifikasi MongoDB Connectivity, dilakukan serangkaian pengujian untuk memastikan bahwa layanan MongoDB berjalan
+dengan benar dan dapat diakses baik dari host maupun dari dalam cluster K3s. Proses ini dilakukan melalui skrip verify-mongodb.sh,
+yang berfungsi sebagai prosedur diagnostik otomatis mencakup pengecekan konektivitas jaringan, autentikasi, serta akses internal
+cluster. Pengujian dimulai dengan memastikan bahwa port 27017 pada instance MongoDB dapat dijangkau melalui koneksi TCP/IP, dan
+hasil pada terminal (screenshot pertama, test 1) menunjukkan bahwa port tersebut berhasil diakses tanpa kendala. Selanjutnya,
+skrip melakukan verifikasi autentikasi menggunakan mongo client dengan mencoba masuk ke database open5gs. Output (screenshot
+pertama, test 2) menampilkan metadata seperti jumlah koleksi, storageSize, dan statistik indeks yang mengindikasikan kredensial
+valid dan database dalam kondisi aktif serta responsif. Tahapan berikutnya adalah memastikan bahwa akses ke MongoDB juga dapat
+dilakukan dari dalam cluster K3s. Untuk itu, skrip membuat sebuah pod sementara lalu mengeksekusi perintah mongo di dalam pod
+tersebut. Pesan “MongoDB connection successful!” (screenshot kedua, test 3) menunjukkan bahwa jaringan internal cluster berfungsi
+dengan benar dan pods memiliki rute serta izin akses yang diperlukan bagi modul seperti AMF, SMF, dan UDM yang bergantung pada
+read/write database. Terakhir, skrip memeriksa log pod MongoDB untuk mendeteksi potensi error internal. Pesan “No errors found or
+pod not ready” (screenshot kedua, test 4) menunjukkan tidak ditemukan gangguan yang berpotensi memengaruhi stabilitas layanan.
+Dengan begitu, hasil verifikasi memastikan bahwa MongoDB terkonfigurasi dengan benar, dapat diakses dari berbagai lapisan sistem,
+dan siap mendukung seluruh proses registrasi, autentikasi, serta manajemen sesi pada arsitektur 5G berbasis Open5GS.
 ```
 ### 4. Cek Service Connectivity
 ```bash
@@ -434,7 +448,18 @@ cd ~/Open5GS-Testbed/ueransim
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 1.2 Start gNB Simulator, dilakukan proses inisialisasi komponen gNB yang disimulasikan oleh UERANSIM untuk memastikan
+bahwa elemen RAN dapat membangun koneksi kontrol dengan AMF yang berjalan pada cluster K3s. Proses dimulai dengan masuk ke direktori
+instalasi UERANSIM (cd ~/Open5GS-Testbed/ueransim) dan menjalankan simulator gNB menggunakan perintah
+./build/nr-gnb -c configs/open5gs-gnb-k3s.yaml. Sebelum eksekusi, dilakukan patching pada service AMF menggunakan kubectl untuk
+menambahkan external IP agar AMF dapat diakses dari host eksternal tempat UERANSIM berjalan. Screenshot yang ditampilkan memperlihatkan
+keseluruhan alur tersebut, di mana log terminal menunjukkan upaya gNB membangun koneksi SCTP ke AMF dan keberhasilan tahap ini ditandai
+oleh pesan “SCTP connection established”, menunjukkan bahwa komunikasi pada interface N2 telah aktif. Tahapan berikutnya adalah proses
+NG Setup, di mana AMF memberikan respons “NG Setup Response received” dan konfirmasi keberhasilan melalui pesan “NG Setup procedure is
+successful”. Log selanjutnya memperlihatkan inisiasi RRC Setup, Initial Context Setup, serta persiapan sesi PDU pertama untuk UE, yang
+menandakan bahwa gNB telah berfungsi penuh sebagai stasiun basis 5G dalam testbed. Secara keseluruhan, kombinasi instruksi teks dan
+output terminal pada screenshot menunjukkan bahwa simulator gNB berhasil dijalankan, terhubung dengan benar ke network core Open5GS,
+dan siap melayani koneksi UE pada arsitektur 5G yang telah dikonfigurasi.
 ```
 
 ## 1.3 Start UE Simulator
