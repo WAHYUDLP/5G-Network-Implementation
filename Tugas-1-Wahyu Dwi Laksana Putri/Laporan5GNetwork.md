@@ -402,7 +402,17 @@ cd ~/Open5GS-Testbed/ueransim
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 1.1 Persiapan UERANSIM pada Host Eksternal, dilakukan konfigurasi awal untuk memastikan bahwa elemen gNB yang
+disimulasikan oleh UERANSIM dapat terhubung dengan core network Open5GS yang berjalan pada cluster K3s. Proses dimulai dengan
+masuk ke direktori instalasi UERANSIM melalui perintah cd ~/Open5GS-Testbed/ueransim, kemudian membuka folder configs untuk
+memverifikasi keberadaan berkas konfigurasi yang diperlukan. Screenshot pertama menunjukkan struktur direktori tersebut,
+memastikan bahwa file open5gs-gnb-k3s.yaml tersedia sebagai berkas utama yang akan disesuaikan. Selanjutnya, file konfigurasi
+tersebut dibuka untuk proses modifikasi, sebagaimana terlihat pada screenshot kedua yang menampilkan pengaturan identitas jaringan
+(MCC, MNC, TAC, dan NCI), alamat IP lokal gNB untuk antarmuka N2 dan N3, serta bagian amfConfigs yang berisi informasi koneksi
+menuju AMF. Pada tahap ini, penyesuaian penting dilakukan dengan mengubah nilai address pada bagian amfConfigs agar mengarah ke
+alamat IP host K3s (<K3s_HOST_IP>) menggunakan port 38412 sebagai port default interface N2. Pembaruan ini memastikan bahwa gNB
+dapat menemukan dan berkomunikasi dengan AMF, sehingga prosedur signalling serta pembentukan koneksi kontrol dalam arsitektur 5G
+dapat berjalan dengan benar. 
 ```
 
 ## 1.2 Start gNB Simulator
