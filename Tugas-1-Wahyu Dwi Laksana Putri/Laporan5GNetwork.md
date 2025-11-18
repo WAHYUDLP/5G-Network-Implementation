@@ -143,7 +143,7 @@ sudo chmod 777 /mnt/data/open5gs-logs
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Langkah 1: Persiapan Sistem, setelah melakukan pembaruan sistem, instalasi dependensi, dan pembuatan direktori log menggunakan perintah sudo mkdir -p /mnt/data/open5gs-logs diikuti dengan sudo chmod 777 /mnt/data/open5gs-logs, keberhasilan dari langkah pembuatan direktori ini diverifikasi melalui dua perintah ls yang ditampilkan pada Screenshot Step 1. Perintah pertama, ls -ld /mnt/data/open5gs-logs, mengonfirmasi bahwa direktori /mnt/data/open5gs-logs telah berhasil dibuat (d di awal izin), dimiliki oleh user dan group root, dan memiliki izin drwxrwxrwx (izin 777 yang berarti user, group, dan others memiliki izin baca, tulis, dan eksekusi), yang menunjukkan bahwa perintah pembuatan dan pemberian izin log direktori telah berhasil dieksekusi sesuai rencana. Perintah kedua, ls -l /mnt/data, semakin memperkuat hasil tersebut dengan menampilkan daftar isi direktori /mnt/data dan menunjukkan keberadaan sub-direktori open5gs-logs dengan izin yang sama (drwxrwxrwx), yang secara keseluruhan memastikan persiapan sistem untuk direktori log sudah benar.
 ```
 
 ## Step 2: Setup K3s Environment dengan Calico
@@ -197,7 +197,7 @@ kubectl get nodes
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Langkah 2: Setup K3s Environment dengan Calico, setelah menavigasi ke direktori yang tepat dan menjalankan skrip setup-k3s-environment-calico.sh menggunakan sudo ./setup-k3s-environment-calico.sh, skrip berhasil melakukan semua tugas yang direncanakan, diawali dengan pemeriksaan dan konfirmasi bahwa semua required packages sudah terinstal (ditunjukkan pada Screenshot no 4). Keberhasilan instalasi dan konfigurasi ini divalidasi melalui beberapa screenshot verifikasi: Screenshot no 5 menunjukkan status layanan K3s (sudo systemctl status k3s) adalah active (running) dan telah enabled, yang merupakan indikasi utama instalasi K3s berhasil; sementara itu, Screenshot 2 menunjukkan hasil verifikasi cluster (kubectl get nodes dan pod Calico) dengan node ubuntudesktop berstatus Ready dengan role control-plane,master, dan calico-node-vn5p9 pod berstatus Running dan READY 1/1, memverifikasi fungsionalitas K3s dan networking Calico CNI. Akhirnya, Screenshot 4 menyajikan Ringkasan (Summary) dan bagian Verifikasi (Verification) dari skrip, di mana semua langkah, termasuk kernel modules dimuat, K3s terinstal, Calico CNI terinstal dan terkonfigurasi, Open5GS IPPool (10.10.0.0/24) terkonfigurasi, dan kubectl access verified, semuanya ditandai dengan [SUCCESS] yang memastikan bahwa penyiapan lingkungan K3s dengan Calico CNI untuk Open5GS telah selesai sepenuhnya dan siap digunakan.
 ```
 
 ## Step 3: Build dan Import Container Images
@@ -221,7 +221,7 @@ sudo k3s crictl images
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Langkah 3: Build dan Import Container Images, setelah memberikan izin eksekusi pada skrip build-import-containers.sh dan menjalankannya menggunakan sudo ./build-import-containers.sh, skrip berhasil melakukan pemeriksaan dan impor image Open5GS. Screenshot no 1 menunjukkan proses eksekusi skrip di mana ia berhasil mengkonfirmasi bahwa semua image Open5GS yang diperlukan (nrf, scp, udr, udm, ausf, pcf, nssf, amf, smf, dan upf) dengan tag :latest telah exists (ada) dalam sistem. Keberhasilan ini kemudian divalidasi dengan perintah sudo k3s crictl images pada Screenshot no 2, yang menampilkan daftar container images yang tersedia. Dalam daftar tersebut, terlihat jelas semua image Open5GS yang dibutuhkan (docker.io/library/open5gs-amf, open5gs-ausf, open5gs-nrf, dst.) telah tersedia dengan tag latest dan memiliki IMAGE ID dan SIZE yang valid, mengkonfirmasi bahwa proses build atau import container images Open5GS telah berhasil diselesaikan dan semua komponen core jaringan siap untuk di-deploy.
 ```
 
 ## Step 4: Deploy Open5GS ke K3s
@@ -271,7 +271,7 @@ kubectl get pods -n open5gs
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Langkah 4: Deploy Open5GS ke K3s, setelah memberikan izin eksekusi dan menjalankan skrip deploy-k3s-calico.sh yang bertanggung jawab untuk membuat namespace open5gs, menyiapkan IPPool Calico, dan men-deploy semua Network Function (NF) Open5GS serta layanan MongoDB di cluster K3s, keberhasilan deployment ini dikonfirmasi melalui dua perintah verifikasi yang ditunjukkan pada Screenshot. Pertama, hasil perintah kubectl get pods -n open5gs menunjukkan bahwa semua pods Open5GS yang terdiri dari amf-0, ausf-0, nrf-0, nssf-0, pcf-0, scp-0, smf-0, udm-0, udr-0, dan upf-0 berada dalam status Running dan memiliki kondisi READY 1/1 (siap), yang memverifikasi bahwa semua komponen jaringan inti telah berhasil diinstal dan berfungsi. Kedua, perintah kubectl get svc -n open5gs memverifikasi keberhasilan eksposur layanan dengan menampilkan semua layanan NF Open5GS yang relevan (amf, ausf, mongodb, nrf, nssf, pcf, scp, smf, udm, udr, upf) telah berhasil dibuat dengan TYPE ClusterIP yang menunjukkan mereka dapat diakses di dalam cluster K3s, di mana layanan amf juga memiliki EXTERNAL-IP 10.0.2.15, mengkonfirmasi semua langkah deployment telah selesai dengan sukses.
 ```
 
 ## Verifikasi Deployment
@@ -294,7 +294,7 @@ kubectl logs -n open5gs upf-0
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Verifikasi Deployment, langkah pertama untuk mengecek status semua Network Function (NF) dilakukan dengan perintah kubectl get pods -n open5gs -o wide. Keberhasilan verifikasi ini dinilai dari hasil pada Screenshot yang menunjukkan bahwa semua pods Open5GS (amf-0, ausf-0, nrf-0, nssf-0, pcf-0, scp-0, smf-0, udm-0, udr-0, dan upf-0) memiliki status Running dan kondisi READY 1/1, yang mengindikasikan bahwa semua komponen jaringan inti telah berhasil di-deploy dan berjalan dengan baik. Selain itu, opsi -o wide memberikan detail tambahan yang memverifikasi bahwa semua pods telah dialokasikan alamat IP dalam range yang telah dikonfigurasi (10.10.0.0/24) dan semuanya di-deploy pada node ubuntudesktop, menegaskan konsistensi dan integritas deployment di lingkungan K3s sebelum melanjutkan ke pemeriksaan logs NF spesifik.
 ```
 
 ### 2. Verifikasi Static IP Assignment
@@ -320,10 +320,10 @@ sudo ./verify-static-ips.sh
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Berdasarkan Verifikasi Static IP Assignment, setelah menjalankan skrip sudo ./verify-static-ips.sh yang bertujuan untuk memastikan fungsionalitas Calico CNI dan konfigurasi IP statis pada deployment Open5GS, hasilnya menunjukkan keberhasilan parsial dengan adanya masalah konektivitas. Pada Screenshot 1, skrip berhasil mengonfirmasi bahwa Calico terinstal, namespace open5gs ada, IPPool 'open5gs-pool' dengan CIDR 10.10.0.0/24 ada, dan yang terpenting, semua pods Open5GS telah berhasil mendapatkan alokasi alamat IP statis yang sesuai dengan rentang IPPool, seperti nssf-0: 10.10.0.14, amf-0: 10.10.0.5, dan scp-0: 10.10.0.200, memverifikasi bahwa penugasan IP statis telah sukses. Namun, terdapat adanya Some issues found selama pengujian konektivitas dan registrasi NF: SCP cannot ping NRF dan SCP cannot reach NRF HTTP, meskipun verifikasi menunjukkan 10 ConfigMaps hadir dan konfigurasi NRF serta AMF menggunakan IP statis yang benar. Meskipun ada masalah konektivitas antar-NF, konfirmasi bahwa 8 NF terdaftar dengan NRF dan penugasan IP statis pada semua pods telah berhasil tetap menunjukkan bahwa tujuan utama langkah verifikasi IP statis telah tercapai.
 ```
 
-###3. Verifikasi MongoDB Connectivity
+### 3. Verifikasi MongoDB Connectivity
 ```bash
 
 # Run MongoDB verification
