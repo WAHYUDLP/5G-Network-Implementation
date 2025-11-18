@@ -447,7 +447,7 @@ sudo ./build/nr-ue -c configs/open5gs-ue-embb.yaml
 
 Penjelasan: 
 ```text
-ini penjelasan ges
+Pada tahap 1.3 Start UE Simulator, proses inisialisasi perangkat pengguna (User Equipment/UE) dilakukan menggunakan UERANSIM untuk menguji konektivitas terhadap core network Open5GS. Eksekusi perintah nr-ue dengan menggunakan konfigurasi open5gs-ue-embb.yaml memulai simulasi UE dan memicu rangkaian prosedur attach serta registrasi ke jaringan 5G. Berdasarkan output terminal, UE melalui tahapan PLMN search, RRC connection setup, autentikasi, security mode command, hingga initial registration, yang seluruhnya diterima dan disetujui oleh jaringan hingga status berubah menjadi MM-REGISTERED/NORMAL-SERVICE. Screenshot pertama menunjukkan fase awal ketika UE mendeteksi sel, melakukan koneksi RRC, serta memasuki mode layanan normal, sedangkan screenshot kedua menampilkan kelanjutan proses yang mengonfirmasi bahwa Registration Accept telah diterima, PDU Session Establishment berhasil (PSI[1]), dan antarmuka jaringan virtual uesimtun0 telah aktif dengan alamat IP (misalnya 10.45.0.2). Dengan begitu, simulator UE telah resmi terhubung ke jaringan inti 5G dan siap digunakan untuk mengirim maupun menerima trafik data dalam lingkungan testbed yang telah dikonfigurasi.
 ```
 
 ## 1.4 Test Basic Connectivity
