@@ -530,7 +530,6 @@ curl --interface uesimtun0 -I https://www.google.com
 Test UE TUN interface dan Test gateway connectivity (UE -> UPF)
 <img width="500"  alt="1. Test UI TUN dan gateway connectivity" src="https://github.com/user-attachments/assets/473022f4-9820-41d6-86c4-651226b67cab" />
 
-
  Test internet connectivity dan Test DNS resolution
 <img width="500" alt="3 2 Test ping dan DNS resolution" src="https://github.com/user-attachments/assets/34428863-fd51-4b7f-9762-9dc2c2845509" />
 
